@@ -20,6 +20,7 @@ public class PersonController {
         return person.getIdPerson();
     }
 
+    
     @GetMapping("/listAll")
     public Iterable<Person> listAllPersons() {
         return personService.list();
