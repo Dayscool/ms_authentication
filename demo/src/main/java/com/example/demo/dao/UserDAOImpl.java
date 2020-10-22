@@ -30,6 +30,7 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
+	
 	public User findById(int id) {
 		
 		Session currentSession = entityManager.unwrap(Session.class);
@@ -64,7 +65,10 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public void updateEntry_time(User user) { 
 		Session currentSession = entityManager.unwrap(Session.class);	
-		user.setEntry_time(null);
+		;
+		
+
+		user.setEntry_time(null);  
 		currentSession.update(user);
 	}
 

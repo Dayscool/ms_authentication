@@ -28,7 +28,7 @@ public class User {
 	private String mail;
 
 	@Column(name="birth_date")
-	//@CreationTimestamp
+	
 	private Date birth_date;
 	
 	@Column(name="career")
@@ -44,7 +44,7 @@ public class User {
 	private String password;	
 
 	@Column(name="entry_time")
-	@UpdateTimestamp
+	@CreationTimestamp
 	private Date entry_time;
 
 	public User() {}

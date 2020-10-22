@@ -60,8 +60,7 @@ public class UserRestController {
 			throw new RuntimeException("user id not found -");
 		}
 		//retornará al usuario con id pasado en la url
-		
-		userService.save(id); 
+		userService.save(id);
 		return id;
 	}
 	
