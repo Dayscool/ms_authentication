@@ -27,8 +27,8 @@ public class User {
 	@Column(name="mail")
 	private String mail;
 
-	@Column(name="birth_date")
-	private LocalDate birth_date;
+	@Column(name="birthDate")
+	private LocalDate birthDate;
 	
 	@Column(name="career")
 	private String career;
@@ -42,25 +42,25 @@ public class User {
 	@Column(name="password")
 	private String password;	
 
-	@Column(name="entry_time")
+	@Column(name="entryTime")
 	@CreationTimestamp
-	private LocalDateTime entry_time;
+	private LocalDateTime entryTime;
 
 	public User() {}
 	
 	public User( int id,
 	String username, String mail,
-	LocalDate birth_date, String career, String role,
+	LocalDate birthDate, String career, String role,
 	String name, String password, LocalDateTime entry_time) {
 		this.id = id;
 		this.username = username;
 		this.mail = mail;
-		this.birth_date = birth_date;		
+		this.birthDate = birthDate;
 		this.career = career;
 		this.role = role;
 		this.name = name;
 		this.password = password; 
-		this.entry_time = entry_time;
+		this.entryTime = entryTime;
 	}
 
 	public int getId() {
@@ -88,12 +88,13 @@ public class User {
 	}
 
 
-	public LocalDate getBirth_date() {
-		return birth_date;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
-	public void setBirth_date(String birth_date) {
-		this.birth_date = LocalDate.parse(birth_date);
+	public void setBirthDate(String birthDate) {
+		System.out.println(birthDate);
+		this.birthDate = LocalDate.parse(birthDate);
 	}
 
 	public String getCareer() {
@@ -128,12 +129,12 @@ public class User {
 		this.password = password;
 	}
 
-	public LocalDateTime getEntry_time() {
-		return entry_time;
+	public LocalDateTime getEntryTime() {
+		return entryTime;
 	}
 
-	public void setEntry_time(LocalDateTime entry_time) {
-		this.entry_time = null;
+	public void setEntryTime(LocalDateTime entry_time) {
+		this.entryTime = null;
 	}
 
 	@Override
@@ -143,12 +144,12 @@ public class User {
 		", mail=" + mail + 
 		", username=" + username + 
 		", mail=" + mail + 
-		", birth_date=" + birth_date + 
+		", birth_date=" + birthDate +
 		", career=" + career + 
 		", role=" + role + 
 		", name=" + name + 
 		", password=" + password + 
-		", entry_time=" + entry_time + 
+		", entry_time=" + entryTime +
 		"]";
 	}
 	
