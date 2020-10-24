@@ -1,7 +1,7 @@
 package com.example.demo.entity;
 
-import java.util.Date;
-
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,8 +28,7 @@ public class User {
 	private String mail;
 
 	@Column(name="birth_date")
-	
-	private Date birth_date;
+	private LocalDate birth_date;
 	
 	@Column(name="career")
 	private String career;
@@ -45,14 +44,14 @@ public class User {
 
 	@Column(name="entry_time")
 	@CreationTimestamp
-	private Date entry_time;
+	private LocalDateTime entry_time;
 
 	public User() {}
 	
 	public User( int id,
 	String username, String mail,
-	Date birth_date, String career, String role,
-	String name, String password, Date entry_time) {
+	LocalDate birth_date, String career, String role,
+	String name, String password, LocalDateTime entry_time) {
 		this.id = id;
 		this.username = username;
 		this.mail = mail;
@@ -89,12 +88,12 @@ public class User {
 	}
 
 
-	public Date getBirth_date() {
+	public LocalDate getBirth_date() {
 		return birth_date;
 	}
 
-	public void setBirth_date(Date birth_date) {
-		this.birth_date = birth_date;
+	public void setBirth_date(String birth_date) {
+		this.birth_date = LocalDate.parse(birth_date);
 	}
 
 	public String getCareer() {
@@ -129,12 +128,12 @@ public class User {
 		this.password = password;
 	}
 
-	public Date getEntry_time() {
+	public LocalDateTime getEntry_time() {
 		return entry_time;
 	}
 
-	public void setEntry_time(Date entry_time) {
-		this.entry_time = entry_time;
+	public void setEntry_time(LocalDateTime entry_time) {
+		this.entry_time = null;
 	}
 
 	@Override
